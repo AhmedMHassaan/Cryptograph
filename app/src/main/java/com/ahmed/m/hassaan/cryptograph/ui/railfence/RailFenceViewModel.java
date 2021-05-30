@@ -3,6 +3,7 @@ package com.ahmed.m.hassaan.cryptograph.ui.railfence;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 
+import com.ahmed.m.hassaan.cryptograph.data.model.RailFence;
 import com.ahmed.m.hassaan.cryptograph.data.model.Viegenre;
 
 public class RailFenceViewModel extends ViewModel {
@@ -15,7 +16,7 @@ public class RailFenceViewModel extends ViewModel {
     }
 
 
-    public void encrypt(String key, String plain) {
+    public void encrypt(int key, String plain) {
         RailFence railFence = new RailFence();
         String encryption = railFence.encrypt(plain, key);
         mText.setValue(encryption);

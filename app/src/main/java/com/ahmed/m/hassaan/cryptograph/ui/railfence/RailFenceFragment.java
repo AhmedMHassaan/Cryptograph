@@ -14,44 +14,46 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.ahmed.m.hassaan.cryptograph.R;
+import com.ahmed.m.hassaan.cryptograph.databinding.FragmentCaesarBinding;
+import com.ahmed.m.hassaan.cryptograph.databinding.FragmentRailFenceBinding;
 import com.ahmed.m.hassaan.cryptograph.databinding.FragmentViegenreBinding;
+import com.ahmed.m.hassaan.cryptograph.ui.caesar.CaesarViewModel;
 import com.ahmed.m.hassaan.cryptograph.ui.viegenre.ViegenreViewModel;
 import com.google.android.material.snackbar.BaseTransientBottomBar;
 import com.google.android.material.snackbar.Snackbar;
 
 import org.jetbrains.annotations.NotNull;
 
-public class RailFenceFragment extends Fragment {
+public class RailFenceFragment extends Fragment implements View.OnClickListener {
+
+    FragmentRailFenceBinding binding;
+    RailFenceViewModel railFenceViewModel;
 
 
     @Override
     public void onAttach(@NonNull @NotNull Context context) {
         super.onAttach(context);
-        viegenreViewModel = new ViewModelProvider(this).get(ViegenreViewModel.class);
+        railFenceViewModel = new ViewModelProvider(this).get(RailFenceViewModel.class);
     }
 
     @Override
     public void onViewCreated(@NonNull @NotNull View view, @Nullable @org.jetbrains.annotations.Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-        viegenreViewModel.getText().observe(getViewLifecycleOwner(), s -> binding.lblResult.setText(s));
+        railFenceViewModel.getText().observe(getViewLifecycleOwner(), s -> binding.lblResult.setText(s));
 
     }
 
     public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 
 
-        binding = FragmentViegenreBinding.inflate(inflater, container, false);
+        binding = FragmentRailFenceBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
 
 
-        events();
+        binding.btnEncrypt.setOnClickListener(this);
 
         return root;
-    }
-
-    private void events() {
-        binding.btnEncrypt.setOnClickListener(this);
     }
 
     @Override
@@ -73,13 +75,10 @@ public class RailFenceFragment extends Fragment {
 
             } else {
                 try {
-
-//                    int keyInt = Integer.parseInt(key);
-                    viegenreViewModel.encrypt(key, plain);
+                    int keyInt = Integer.parseInt(key);
+                    railFenceViewModel.encrypt(keyInt, plain);
                 } catch (Exception e) {
-                    Snackbar.make(v, "Error " + e.getMessage(), BaseTransientBottomBar.LENGTH_SHORT).show();
-                    Log.e("TAG", "onClick: ",e );
-                    e.printStackTrace();
+                    Snackbar.make(v, "Error "+e.getMessage(), BaseTransientBottomBar.LENGTH_SHORT).show();
                 }
             }
 
