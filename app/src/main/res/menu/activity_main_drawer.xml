@@ -9,7 +9,7 @@
             android:icon="@drawable/ic_security"
             android:title="@string/menu_caesar" />
         <item
-            android:id="@+id/nav_playFaie"
+            android:id="@+id/nav_playFair"
             android:icon="@drawable/ic_security"
             android:title="@string/menu_play_fair" />
         <item

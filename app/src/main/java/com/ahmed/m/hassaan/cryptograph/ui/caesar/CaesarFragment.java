@@ -34,7 +34,7 @@ public class CaesarFragment extends Fragment implements View.OnClickListener {
     public void onViewCreated(@NonNull @NotNull View view, @Nullable @org.jetbrains.annotations.Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-        caesarViewModel.getText().observe(getViewLifecycleOwner(), s -> binding.lblResult.setText("The Result is : "+s));
+        caesarViewModel.getText().observe(getViewLifecycleOwner(), s -> binding.lblResult.setText(s));
 
     }
 
@@ -69,11 +69,10 @@ public class CaesarFragment extends Fragment implements View.OnClickListener {
 
             } else {
                 try {
-                    Log.d("TAG", "onClick: ViewModel Go To ");
                     int keyInt = Integer.parseInt(key);
                     caesarViewModel.encrypt(keyInt, plain);
                 } catch (Exception e) {
-                    Snackbar.make(v, "Enter Valid Key just integer", BaseTransientBottomBar.LENGTH_SHORT).show();
+                    Snackbar.make(v, "Error "+e.getMessage(), BaseTransientBottomBar.LENGTH_SHORT).show();
                 }
             }
 

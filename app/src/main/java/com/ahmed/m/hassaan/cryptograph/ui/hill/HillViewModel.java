@@ -4,16 +4,24 @@ import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 
+import com.ahmed.m.hassaan.cryptograph.data.model.Caesar;
+import com.ahmed.m.hassaan.cryptograph.data.model.Hill;
+
 public class HillViewModel extends ViewModel {
 
-    private MutableLiveData<String> mText;
+    private final MutableLiveData<String> mText = new MutableLiveData<>();;
 
-    public HillViewModel() {
-        mText = new MutableLiveData<>();
-        mText.setValue("This is slideshow fragment");
-    }
 
-    public LiveData<String> getText() {
+
+    public MutableLiveData<String> getText() {
         return mText;
     }
+
+
+    public void encrypt(int[][] key,int n,  String plain) {
+        Hill hill = new Hill(key, n, plain);
+        String encryption = hill.encrypt(key);
+        mText.setValue(encryption);
+    }
+
 }

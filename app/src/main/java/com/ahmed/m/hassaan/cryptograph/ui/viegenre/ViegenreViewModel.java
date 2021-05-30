@@ -1,16 +1,14 @@
-package com.ahmed.m.hassaan.cryptograph.ui.playfair;
+package com.ahmed.m.hassaan.cryptograph.ui.viegenre;
 
-import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 
-import com.ahmed.m.hassaan.cryptograph.data.model.Hill;
 import com.ahmed.m.hassaan.cryptograph.data.model.PlayFair;
+import com.ahmed.m.hassaan.cryptograph.data.model.Viegenre;
 
-public class PlayFairViewModel extends ViewModel {
+public class ViegenreViewModel extends ViewModel {
 
     private final MutableLiveData<String> mText = new MutableLiveData<>();
-
 
 
     public MutableLiveData<String> getText() {
@@ -19,10 +17,13 @@ public class PlayFairViewModel extends ViewModel {
 
 
     public void encrypt(String key, String plain) {
-        PlayFair playFair = new PlayFair(key);
-        String encryption = playFair.encode(plain);
+        Viegenre playFair = new Viegenre();
+        String encryption = playFair.encrypt(plain, key);
         mText.setValue(encryption);
     }
 
 
 }
+
+
+
