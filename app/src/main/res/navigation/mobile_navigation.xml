@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/nav_caesar">
+
+
+    <fragment
+        android:id="@+id/nav_caesar"
+        android:name="com.ahmed.m.hassaan.cryptograph.ui.caesar.CaesarFragment"
+        android:label="@string/menu_caesar"
+        tools:layout="@layout/fragment_caesar" />
+
+
+    <fragment
+        android:id="@+id/nav_playFair"
+        android:name="com.ahmed.m.hassaan.cryptograph.ui.playfair.PlayFairFragment"
+        android:label="@string/menu_play_fair"
+        tools:layout="@layout/fragment_play_fiar" />
+
+
+
+        <fragment
+    android:id="@+id/nav_hill"
+        android:name="com.ahmed.m.hassaan.cryptograph.ui.hill.HillFragment"
+        android:label="@string/menu_hill"
+        tools:layout="@layout/fragment_hill" />
+
+
+
+
+
+
+    <fragment
+        android:id="@+id/nav_viegenre"
+        android:name="com.ahmed.m.hassaan.cryptograph.ui.viegenre.ViegenreFragment"
+        android:label="@string/menu_viegenir"
+        tools:layout="@layout/fragment_viegenre" />
+
+
+
+
+    <fragment
+        android:id="@+id/nav_rail"
+        android:name="com.ahmed.m.hassaan.cryptograph.ui.railfence.RailFenceFragment"
+        android:label="@string/menu_rail"
+        tools:layout="@layout/fragment_rail_fence" />
+
+
+    <fragment
+        android:id="@+id/nav_des"
+        android:name="com.ahmed.m.hassaan.cryptograph.ui.des.DESFragment"
+        android:label="@string/menu_des"
+        tools:layout="@layout/fragment_des" />
+
+
+
+
+    <action
+        android:id="@+id/actionToCaesar"
+        app:exitAnim="@anim/nav_default_exit_anim"
+        app:enterAnim="@anim/nav_default_enter_anim"
+        app:destination="@id/nav_caesar"
+        app:launchSingleTop="true"
+        app:popUpToInclusive="false"
+        />
+
+
+    <action
+        android:id="@+id/actionToPlayFiar"
+        app:exitAnim="@anim/nav_default_exit_anim"
+        app:enterAnim="@anim/nav_default_enter_anim"
+        app:destination="@id/nav_playFair"
+        app:launchSingleTop="true"
+        app:popUpToInclusive="false"
+        />
+
+    <action
+        android:id="@+id/actionToHill"
+        app:exitAnim="@anim/nav_default_exit_anim"
+        app:enterAnim="@anim/nav_default_enter_anim"
+        app:destination="@id/nav_hill"
+        app:launchSingleTop="true"
+        app:popUpToInclusive="false"
+        />
+
+
+
+    <action
+        android:id="@+id/actionToViegenre"
+        app:exitAnim="@anim/nav_default_exit_anim"
+        app:enterAnim="@anim/nav_default_enter_anim"
+        app:destination="@id/nav_viegenre"
+        app:launchSingleTop="true"
+        app:popUpToInclusive="false"
+        />
+
+    <action
+        android:id="@+id/actionToRail"
+        app:destination="@id/nav_rail"
+        app:enterAnim="@anim/nav_default_enter_anim"
+        app:exitAnim="@anim/nav_default_exit_anim"
+        app:launchSingleTop="true"
+        app:popUpToInclusive="false" />
+
+    <action
+        android:id="@+id/actionToDes"
+        app:exitAnim="@anim/nav_default_exit_anim"
+        app:enterAnim="@anim/nav_default_enter_anim"
+        app:destination="@id/nav_des"
+        app:launchSingleTop="true"
+        app:popUpToInclusive="false"
+        />
+
+
+
+
+</navigation>

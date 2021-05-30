@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_caesar"
+            android:icon="@drawable/ic_security"
+            android:title="@string/menu_caesar" />
+        <item
+            android:id="@+id/nav_playFaie"
+            android:icon="@drawable/ic_security"
+            android:title="@string/menu_play_fair" />
+        <item
+            android:id="@+id/nav_hill"
+            android:icon="@drawable/ic_security"
+            android:title="@string/menu_hill" />
+
+        <item
+            android:id="@+id/nav_viegenre"
+            android:icon="@drawable/ic_security"
+            android:title="@string/menu_viegenir" />
+
+        <item
+            android:id="@+id/nav_rail"
+            android:icon="@drawable/ic_security"
+            android:title="@string/menu_rail" />
+        <item
+            android:id="@+id/nav_des"
+            android:icon="@drawable/ic_security"
+            android:title="@string/menu_des" />
+       
+    </group>
+</menu>

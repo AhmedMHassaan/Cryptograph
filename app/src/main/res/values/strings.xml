@@ -1,0 +1,24 @@
+<resources>
+    <string name="app_name">Cryptograph</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">Ahmed Mohamed Hassaan</string>
+    <string name="nav_header_subtitle">FCI 4th Level</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="action_settings">Settings</string>
+
+    <string name="menu_caesar">Caesar Cipher</string>
+    <string name="menu_play_fair">Play Fair</string>
+    <string name="menu_hill">Hill Cipher</string>
+    <string name="menu_viegenir">Viegenre Cipher</string>
+    <string name="menu_rail">Rail Fence</string>
+    <string name="menu_des">DES Cipher</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="enter_text_to_be_encrypted">Enter Text To Be Encrypted</string>
+    <string name="plain_text">Plain Text</string>
+    <string name="enter_encryption_key">Enter Encryption Key</string>
+    <string name="encrypt">Encrypt</string>
+    <string name="result_of_encryption">Result Of Encryption</string>
+    <string name="encryption_key">Encryption Key</string>
+</resources>

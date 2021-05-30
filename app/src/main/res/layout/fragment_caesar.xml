@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.caesar.CaesarFragment">
+
+    <include
+        android:id="@+id/image"
+        layout="@layout/shield"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="@dimen/_15sdp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/enter_text_to_be_encrypted"
+        android:layout_below="@id/image"
+        android:layout_marginTop="@dimen/_15sdp"
+        android:textColor="@color/purple_200"
+        android:layout_marginStart="@dimen/_10sdp"
+        android:layout_alignParentStart="true"
+        android:id="@+id/lblPlinHint"
+        />
+
+
+    <EditText
+        android:hint="@string/plain_text"
+        android:layout_width="match_parent"
+        android:layout_below="@id/lblPlinHint"
+        android:layout_height="wrap_content"
+        android:textColor="@color/black"
+        android:textColorHint="@color/purple_500"
+        android:textSize="@dimen/_14ssp"
+        android:layout_alignStart="@id/lblPlinHint"
+        android:id="@+id/txtPlain"
+        android:importantForAutofill="no"
+        />
+
+    <TextView
+        android:id="@+id/lblKeyHint"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/txtPlain"
+        android:layout_alignStart="@id/lblPlinHint"
+        android:layout_marginTop="@dimen/_20sdp"
+        android:text="@string/enter_encryption_key"
+        android:textColor="@color/purple_200" />
+
+
+    <EditText
+        android:id="@+id/txtKey"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/lblKeyHint"
+        android:layout_alignStart="@id/lblPlinHint"
+        android:hint="@string/encryption_key"
+        android:inputType="number"
+        android:importantForAutofill="no"
+        android:textColor="@color/black"
+        android:textColorHint="@color/purple_500"
+        android:textSize="@dimen/_14ssp" />
+
+
+    <TextView
+        android:id="@+id/lblResultHint"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/txtKey"
+        android:layout_alignStart="@id/lblPlinHint"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:text="@string/result_of_encryption"
+        android:textColor="@color/purple_200" />
+
+    <TextView
+        android:id="@+id/lblResult"
+        android:layout_below="@id/lblResultHint"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        tools:text="MM"
+        android:layout_alignLeft="@id/lblPlinHint"
+        android:layout_above="@id/btnEncrypt"
+        android:textSize="@dimen/_14ssp"
+/>
+
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/encrypt"
+        android:layout_marginStart="@dimen/_20sdp"
+        android:layout_marginEnd="@dimen/_20sdp"
+        android:textSize="@dimen/_16ssp"
+        android:padding="@dimen/_10sdp"
+        android:id="@+id/btnEncrypt"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="@dimen/_30sdp"
+        />
+
+</RelativeLayout>
