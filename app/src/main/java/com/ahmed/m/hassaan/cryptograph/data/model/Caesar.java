@@ -1,5 +1,7 @@
 package com.ahmed.m.hassaan.cryptograph.data.model;
 
+import android.util.Log;
+
 import java.security.NoSuchAlgorithmException;
 import java.security.SecureRandom;
 import java.util.HashMap;
@@ -67,9 +69,11 @@ public class Caesar {
         StringBuilder encryptedText = new StringBuilder();
         //Make sure the key is valid.
         if (key < 0 || key > 25 ){
+            Log.d("TAG", "encrypt: Error in Keu=y ");
             return "Key Must be  0 : 25";
         }
         if ( plaintext.length() <= 0) {
+            Log.d("TAG", "encrypt: Error in Plain");
             return "Error in Plaintext";
         }
         //Eliminates any whitespace and non alpha char's.
@@ -80,11 +84,13 @@ public class Caesar {
         }
         //Makes sure that all the letters are uppercase.
         plaintext = plaintext.toUpperCase();
+        Log.i("Caesar", "encrypt: plainis :  "+plaintext);
         for (int i = 0; i < plaintext.length(); i++) {
             char letter = plaintext.charAt(i);
             int lookUp = (charMap.get(letter) + key) % 26;
             encryptedText.append(encryptionArr[lookUp]);
         }
+        Log.d("Caesar.java", "encrypt: the Data is "+encryptedText.toString());
         return encryptedText.toString();
     }
 
