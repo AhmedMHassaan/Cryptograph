@@ -26,4 +26,10 @@ public class CaesarViewModel extends ViewModel {
         String encryption = caesar.encrypt();
         mText.setValue(encryption);
     }
+
+    public void decrypt(int key, String cipher) {
+        Caesar caesar = new Caesar(key, cipher);
+        String decryption = caesar.decrypt();
+        mText.setValue(decryption);
+    }
 }

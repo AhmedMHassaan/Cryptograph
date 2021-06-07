@@ -2,7 +2,8 @@ package com.ahmed.m.hassaan.cryptograph.data.model;
 
 import java.util.Random;
 
-public class DES {
+public class
+DES {
     // Here we have the variables used in the class, most of them are hardcoded but the optimum solution would be to generate them dynamically
     private long DESKey; // Used to store our 64 bit key.
     private long subKeys[] = new long[16]; // Used to store our 16, 48 bit keys.
@@ -177,11 +178,7 @@ public class DES {
         return stringNum;
     }
 
-    // Work in progess to implement decryption
-    public String decrypt(String message){
-        String decrypted = "";
-        return decrypted;
-    }
+
 
     // This function generates our subkeys that are necesary for the algorithm
     private void generateSubkeys(long key){

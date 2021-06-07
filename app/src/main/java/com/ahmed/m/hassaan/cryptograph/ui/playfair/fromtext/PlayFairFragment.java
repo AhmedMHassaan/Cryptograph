@@ -1,4 +1,4 @@
-package com.ahmed.m.hassaan.cryptograph.ui.playfair;
+package com.ahmed.m.hassaan.cryptograph.ui.playfair.fromtext;
 
 import android.content.Context;
 import android.os.Bundle;
@@ -19,6 +19,7 @@ import androidx.lifecycle.ViewModelProvider;
 import com.ahmed.m.hassaan.cryptograph.databinding.FragmentHillBinding;
 import com.ahmed.m.hassaan.cryptograph.databinding.FragmentPlayFiarBinding;
 import com.ahmed.m.hassaan.cryptograph.ui.hill.HillViewModel;
+import com.ahmed.m.hassaan.cryptograph.ui.playfair.PlayFairViewModel;
 import com.google.android.material.snackbar.BaseTransientBottomBar;
 import com.google.android.material.snackbar.Snackbar;
 

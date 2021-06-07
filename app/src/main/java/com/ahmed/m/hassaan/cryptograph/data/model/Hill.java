@@ -24,7 +24,7 @@ public class Hill {
     /**
      * Sets the encryption key
      *
-     * @param key
+     * @param key key of encryption
      */
     public void setKey(int[][] key) {
         Key = key;
@@ -286,8 +286,8 @@ public class Hill {
      * Decrypts the text provided prior to its encrypted state.
      * Be sure when using this to pas in this.getDecryptionKey();
      *
-     * @param key
-     * @param encryption
+     * @param key key of encryption
+     * @param encryption  cipher text
      * @return Plain text from encrypted string
      */
     public String Decrypt(int[][] key, String encryption) {

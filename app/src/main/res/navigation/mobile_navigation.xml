@@ -15,21 +15,16 @@
 
     <fragment
         android:id="@+id/nav_playFair"
-        android:name="com.ahmed.m.hassaan.cryptograph.ui.playfair.PlayFairFragment"
+        android:name="com.ahmed.m.hassaan.cryptograph.ui.playfair.fromtext.PlayFairFragment"
         android:label="@string/menu_play_fair"
         tools:layout="@layout/fragment_play_fiar" />
 
 
-
-        <fragment
-    android:id="@+id/nav_hill"
+    <fragment
+        android:id="@+id/nav_hill"
         android:name="com.ahmed.m.hassaan.cryptograph.ui.hill.HillFragment"
         android:label="@string/menu_hill"
         tools:layout="@layout/fragment_hill" />
-
-
-
-
 
 
     <fragment
@@ -37,8 +32,6 @@
         android:name="com.ahmed.m.hassaan.cryptograph.ui.viegenre.ViegenreFragment"
         android:label="@string/menu_viegenir"
         tools:layout="@layout/fragment_viegenre" />
-
-
 
 
     <fragment
@@ -54,47 +47,52 @@
         android:label="@string/menu_des"
         tools:layout="@layout/fragment_des" />
 
+    <fragment
+        android:id="@+id/nav_playFair_file_encrypt"
+        android:name="com.ahmed.m.hassaan.cryptograph.ui.playfair.fromfile.encrypt.FragmentPlayFairFileEncryption"
+        android:label="@string/menu_play_fair_file_encrypt"
+        tools:layout="@layout/fragment_play_fair_file_encryption" />
 
+    <fragment
+        android:id="@+id/nav_playFair_file_decrypt"
+        android:name="com.ahmed.m.hassaan.cryptograph.ui.playfair.fromfile.decrypt.FragmentPlayFairFileDecryption"
+        android:label="@string/menu_play_fair_file_decrypt"
+        tools:layout="@layout/fragment_play_fair_file_decryption" />
 
 
     <action
         android:id="@+id/actionToCaesar"
-        app:exitAnim="@anim/nav_default_exit_anim"
-        app:enterAnim="@anim/nav_default_enter_anim"
         app:destination="@id/nav_caesar"
+        app:enterAnim="@anim/nav_default_enter_anim"
+        app:exitAnim="@anim/nav_default_exit_anim"
         app:launchSingleTop="true"
-        app:popUpToInclusive="false"
-        />
+        app:popUpToInclusive="false" />
 
 
     <action
         android:id="@+id/actionToPlayFiar"
-        app:exitAnim="@anim/nav_default_exit_anim"
-        app:enterAnim="@anim/nav_default_enter_anim"
         app:destination="@id/nav_playFair"
+        app:enterAnim="@anim/nav_default_enter_anim"
+        app:exitAnim="@anim/nav_default_exit_anim"
         app:launchSingleTop="true"
-        app:popUpToInclusive="false"
-        />
+        app:popUpToInclusive="false" />
 
     <action
         android:id="@+id/actionToHill"
-        app:exitAnim="@anim/nav_default_exit_anim"
-        app:enterAnim="@anim/nav_default_enter_anim"
         app:destination="@id/nav_hill"
+        app:enterAnim="@anim/nav_default_enter_anim"
+        app:exitAnim="@anim/nav_default_exit_anim"
         app:launchSingleTop="true"
-        app:popUpToInclusive="false"
-        />
-
+        app:popUpToInclusive="false" />
 
 
     <action
         android:id="@+id/actionToViegenre"
-        app:exitAnim="@anim/nav_default_exit_anim"
-        app:enterAnim="@anim/nav_default_enter_anim"
         app:destination="@id/nav_viegenre"
+        app:enterAnim="@anim/nav_default_enter_anim"
+        app:exitAnim="@anim/nav_default_exit_anim"
         app:launchSingleTop="true"
-        app:popUpToInclusive="false"
-        />
+        app:popUpToInclusive="false" />
 
     <action
         android:id="@+id/actionToRail"
@@ -106,14 +104,28 @@
 
     <action
         android:id="@+id/actionToDes"
-        app:exitAnim="@anim/nav_default_exit_anim"
-        app:enterAnim="@anim/nav_default_enter_anim"
         app:destination="@id/nav_des"
+        app:enterAnim="@anim/nav_default_enter_anim"
+        app:exitAnim="@anim/nav_default_exit_anim"
         app:launchSingleTop="true"
-        app:popUpToInclusive="false"
-        />
+        app:popUpToInclusive="false" />
+
+    <action
+        android:id="@+id/actionToFileEnc"
+        app:destination="@id/nav_playFair_file_encrypt"
+        app:enterAnim="@anim/nav_default_enter_anim"
+        app:exitAnim="@anim/nav_default_exit_anim"
+        app:launchSingleTop="true"
+        app:popUpToInclusive="false" />
 
 
+    <action
+        android:id="@+id/actionToFileDec"
+        app:destination="@id/nav_playFair_file_decrypt"
+        app:enterAnim="@anim/nav_default_enter_anim"
+        app:exitAnim="@anim/nav_default_exit_anim"
+        app:launchSingleTop="true"
+        app:popUpToInclusive="false" />
 
 
 </navigation>

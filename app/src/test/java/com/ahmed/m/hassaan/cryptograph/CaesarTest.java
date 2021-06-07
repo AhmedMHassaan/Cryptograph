@@ -15,4 +15,11 @@ public class CaesarTest {
         String result = caesar.encrypt();
         assertEquals("LL", result);
     }
+
+    @Test
+    public void plaiFairDecryption(){
+        Caesar caesar = new Caesar(4, "LL");
+        String result = caesar.decrypt();
+        assertEquals("HH", result);
+    }
 }

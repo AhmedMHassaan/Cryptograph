@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.playfair.fromfile.encrypt.FragmentPlayFairFileEncryption">
+
+    <include
+        android:id="@+id/image"
+        layout="@layout/shield"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="@dimen/_15sdp" />
+
+    <Button
+        android:id="@+id/btnChooseFile"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:drawableEnd="@drawable/ic_choose_file"
+        android:paddingStart="@dimen/_60sdp"
+        android:paddingTop="@dimen/_10sdp"
+        android:paddingEnd="@dimen/_60sdp"
+        android:paddingBottom="@dimen/_10sdp"
+        android:text="@string/choose_file"
+        android:textSize="@dimen/_15ssp" />
+
+    <TextView
+        android:id="@+id/lblFileResult"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/btnEncrypt"
+        android:layout_below="@id/image"
+        android:layout_marginLeft="@dimen/_5sdp"
+        android:layout_marginTop="@dimen/_20sdp"
+        android:layout_marginRight="@dimen/_5sdp"
+        android:layout_marginBottom="@dimen/_20sdp"
+        android:padding="@dimen/_5sdp"
+        android:textColor="@color/black"
+        android:textSize="@dimen/_14ssp"
+        tools:text="ssssssssssssssssssssssssssssss"
+
+        />
+
+    <Button
+        android:id="@+id/btnDecrypt"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="@dimen/_20sdp"
+        android:layout_marginEnd="@dimen/_20sdp"
+        android:layout_marginBottom="@dimen/_30sdp"
+        android:padding="@dimen/_10sdp"
+        android:text="@string/decrypt"
+        android:textSize="@dimen/_16ssp"
+        android:visibility="gone" />
+
+
+</RelativeLayout>

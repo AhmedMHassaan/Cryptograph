@@ -32,4 +32,20 @@
             android:title="@string/menu_des" />
        
     </group>
+
+    <group android:checkableBehavior="single"
+        >
+        <item
+            android:id="@+id/nav_playFair_file_encrypt"
+            android:icon="@drawable/ic_security"
+            android:title="@string/menu_play_fair_file_encrypt" />
+
+        <item
+            android:id="@+id/nav_playFair_file_decrypt"
+            android:icon="@drawable/ic_security"
+            android:title="@string/menu_play_fair_file_decrypt" />
+
+
+    </group>
+
 </menu>

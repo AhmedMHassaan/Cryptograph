@@ -8,7 +8,7 @@ import java.util.HashMap;
 
 public class Caesar {
 
-    private int key ;
+    private int key;
     private String plaintext;
 
     private final static String NAME = "Caesar Cipher";
@@ -68,11 +68,11 @@ public class Caesar {
     public String encrypt() {
         StringBuilder encryptedText = new StringBuilder();
         //Make sure the key is valid.
-        if (key < 0 || key > 25 ){
+        if (key < 0 || key > 25) {
             Log.d("TAG", "encrypt: Error in Keu=y ");
             return "Key Must be  0 : 25";
         }
-        if ( plaintext.length() <= 0) {
+        if (plaintext.length() <= 0) {
             Log.d("TAG", "encrypt: Error in Plain");
             return "Error in Plaintext";
         }
@@ -84,13 +84,15 @@ public class Caesar {
         }
         //Makes sure that all the letters are uppercase.
         plaintext = plaintext.toUpperCase();
-        Log.i("Caesar", "encrypt: plainis :  "+plaintext);
+        Log.i("Caesar", "encrypt: plainis :  " + plaintext);
         for (int i = 0; i < plaintext.length(); i++) {
             char letter = plaintext.charAt(i);
-            int lookUp = (charMap.get(letter) + key) % 26;
-            encryptedText.append(encryptionArr[lookUp]);
+            if (charMap.containsKey(letter) && charMap.get(letter) != null) {
+                int lookUp = (charMap.get(letter) + key) % 26;
+                encryptedText.append(encryptionArr[lookUp]);
+            }
         }
-        Log.d("Caesar.java", "encrypt: the Data is "+encryptedText.toString());
+        Log.d("Caesar.java", "encrypt: the Data is " + encryptedText.toString());
         return encryptedText.toString();
     }
 
@@ -98,28 +100,30 @@ public class Caesar {
      * Decrypts using the formula: (c(i) – k) mod 26.
      * Returns plain text or null if a error occurred.
      */
-    public String decrypt(String cipherText) {
+    public String decrypt() {
         StringBuilder decryptedText = new StringBuilder();
         //Make sure the key is valid.
         if (key < 0 || key > 25) {
             return "Key Must be  0 : 25";
         }
         //Eliminates any whitespace and non alph char's.
-        cipherText = cipherText.trim();
-        cipherText = cipherText.replaceAll("\\W", "");
-        if (cipherText.contains(" ")) {
-            cipherText = cipherText.replaceAll(" ", "");
+        plaintext = plaintext.trim();
+        plaintext = plaintext.replaceAll("\\W", "");
+        if (plaintext.contains(" ")) {
+            plaintext = plaintext.replaceAll(" ", "");
         }
         //Makes sure that all the letters are uppercase.
-        cipherText = cipherText.toUpperCase();
-        for (int i = 0; i < cipherText.length(); i++) {
-            char letter = cipherText.charAt(i);
-            int lookUp = (charMap.get(letter) - key) % 26;
-            //Returns a positive number on negative input.
-            if (lookUp < 0) {
-                lookUp += 26;
+        plaintext = plaintext.toUpperCase();
+        for (int i = 0; i < plaintext.length(); i++) {
+            char letter = plaintext.charAt(i);
+            if (charMap.containsKey(letter) && charMap.get(letter) != null) {
+                int lookUp = (charMap.get(letter) - key) % 26;
+                //Returns a positive number on negative input.
+                if (lookUp < 0) {
+                    lookUp += 26;
+                }
+                decryptedText.append(encryptionArr[lookUp]);
             }
-            decryptedText.append(encryptionArr[lookUp]);
         }
         return decryptedText.toString();
     }
